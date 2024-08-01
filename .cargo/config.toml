@@ -1,0 +1,8 @@
+[alias]
+wasm = "build --release --lib --target wasm32-unknown-unknown"
+wasm-debug = "build --target wasm32-unknown-unknown"
+optimize = "run-script optimize"
+schema = """
+run --bin schema --manifest-path ./contracts/caller/Cargo.toml &&
+run --bin schema --manifest-path ./contracts/peer/Cargo.toml
+"""
