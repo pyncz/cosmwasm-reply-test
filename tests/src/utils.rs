@@ -21,7 +21,7 @@ pub fn instantiate_caller_with_reply(router: &mut App) -> Addr {
         caller::contract::instantiate,
         caller::contract::query,
     )
-    .with_reply_empty(caller::contract::reply);
+    .with_reply(caller::contract::reply);
 
     let code_id = router.store_code(Box::new(code));
 
@@ -56,7 +56,7 @@ pub fn instantiate_peer_with_reply(router: &mut App) -> Addr {
         peer::contract::instantiate,
         peer::contract::query,
     )
-    .with_reply_empty(peer::contract::reply);
+    .with_reply(peer::contract::reply);
 
     let code_id = router.store_code(Box::new(code));
 
